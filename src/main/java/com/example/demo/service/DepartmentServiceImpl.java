@@ -36,6 +36,7 @@ public class DepartmentServiceImpl implements DepartmentService {
 
 	@Override
 	public Department updateDepartment(Department department, Long departmentId) {
+		log.info("Update started");
 		Department dept = departmentRepository.findById(departmentId).get();
 
 		if (Objects.nonNull(department.getDepartmentName()) && department.getDepartmentName() != null) {
@@ -55,6 +56,7 @@ public class DepartmentServiceImpl implements DepartmentService {
 
 	@Override
 	public void deleteDepartmentById(Long departmentId) {
+		log.info("Delete started");
 		departmentRepository.deleteById(departmentId);
 
 	}
