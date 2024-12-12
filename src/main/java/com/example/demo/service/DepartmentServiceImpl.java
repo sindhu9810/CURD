@@ -30,6 +30,7 @@ public class DepartmentServiceImpl implements DepartmentService {
 
 	@Override
 	public List<Department> fetchDepartmentList() {
+		log.info("Fetch started");
 		return (List<Department>) departmentRepository.findAll();
 	}
 
