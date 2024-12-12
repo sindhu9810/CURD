@@ -36,21 +36,21 @@ public class DepartmentServiceImpl implements DepartmentService {
 
 	@Override
 	public Department updateDepartment(Department department, Long departmentId) {
-		Department depDB = departmentRepository.findById(departmentId).get();
+		Department dept = departmentRepository.findById(departmentId).get();
 
-		if (Objects.nonNull(department.getDepartmentName()) && !"".equalsIgnoreCase(department.getDepartmentName())) {
-			depDB.setDepartmentName(department.getDepartmentName());
+		if (Objects.nonNull(department.getDepartmentName()) && department.getDepartmentName() != null) {
+			dept.setDepartmentName(department.getDepartmentName());
 		}
 
-		if (Objects.nonNull(department.getDepartmentAdd()) && !"".equalsIgnoreCase(department.getDepartmentAdd())) {
-			depDB.setDepartmentAdd(department.getDepartmentAdd());
+		if (Objects.nonNull(department.getDepartmentAdd()) && department.getDepartmentAdd() != null) {
+			dept.setDepartmentAdd(department.getDepartmentAdd());
 		}
 
-		if (Objects.nonNull(department.getDpartmentCode()) && !"".equalsIgnoreCase(department.getDpartmentCode())) {
-			depDB.setDpartmentCode(department.getDpartmentCode());
+		if (Objects.nonNull(department.getDpartmentCode()) && department.getDpartmentCode() != null) {
+			dept.setDpartmentCode(department.getDpartmentCode());
 		}
 
-		return departmentRepository.save(depDB);
+		return departmentRepository.save(dept);
 	}
 
 	@Override
