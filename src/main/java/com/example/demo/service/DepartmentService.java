@@ -16,5 +16,7 @@ public interface DepartmentService {
  
     void deleteDepartmentById(Long departmentId);
 
+	void sendEmail();
+
 	
 }
