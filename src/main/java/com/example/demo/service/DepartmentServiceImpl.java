@@ -82,13 +82,10 @@ public class DepartmentServiceImpl implements DepartmentService {
         final String password = "ANIRUDH11";
 
         // Array of recipients
-//        String[] recipients = {
-//        	"sindhujaa98@gmail.com",
-//        };
         List<String> recipients = Arrays.asList("sindhujaa98@gmail.com");
         
         // Email SMTP server details
-        String host = "smtp.gmail.com"; // For Gmail
+        String host = "smtp.gmail.com"; 
 
         // Set up properties for the mail session
         Properties props = new Properties();
@@ -126,20 +123,14 @@ public class DepartmentServiceImpl implements DepartmentService {
             message.setRecipients(Message.RecipientType.TO, recipientAddresses);
             
             
-//            InternetAddress[] recipientAddresses = new InternetAddress[recipients.length];
-//            for (int i = 0; i < recipients.length; i++) {
-//                recipientAddresses[i] = new InternetAddress(recipients[i]);
-//            }
-//            message.setRecipients(Message.RecipientType.TO, recipientAddresses);
-
             // Set the subject and body of the email
-            message.setSubject("Test Email to Multiple Recipients");
-            message.setText("Hello! This email is sent to multiple recipients dynamically using Java.");
+            message.setSubject("Test Email");
+            message.setText("Test Email to me");
 
             // Send the message
             Transport.send(message);
 
-            System.out.println("Email sent successfully to multiple recipients!");
+            System.out.println("Email sent successfully");
 
         } catch (MessagingException e) {
             e.printStackTrace();
