@@ -126,6 +126,8 @@ public class DepartmentServiceImpl implements DepartmentService {
             // Set the subject and body of the email
             message.setSubject("Test Email");
             message.setText("Test Email to me");
+            
+//            message.
 
             // Send the message
             Transport.send(message);
